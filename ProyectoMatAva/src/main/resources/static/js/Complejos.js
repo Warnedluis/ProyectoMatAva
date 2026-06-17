@@ -38,7 +38,7 @@ function calcular()
     };
 
     $.ajax({
-        url : "http://localhost:8080/Complejos/api/Complejos",
+        url : "/Complejos/api/Complejos",
         method : "POST",
         contentType : "application/json",
         data : JSON.stringify(peticionDatos),
