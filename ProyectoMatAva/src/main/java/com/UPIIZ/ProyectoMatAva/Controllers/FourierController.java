@@ -24,7 +24,7 @@ public class FourierController {
     @PostMapping("/Fourier/api/Fourier")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> calcularSerie(@RequestBody FourierRequest request) {
-        String urlPython = "https://proyectomatava.onrender.com/calcularFourier";
+        String urlPython = "https://proyectomatava-fourier.onrender.com/calcularFourier";
         RestTemplate restTemplate = new RestTemplate();
 
         Map<String, Object> payload = new HashMap<>();
