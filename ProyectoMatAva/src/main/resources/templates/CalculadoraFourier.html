@@ -149,25 +149,39 @@
 									<div class="tab-content mt-2 mb-3" id="pills-tabContent">
 										<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                       <form>
-                        <label for="Funcion">Funcion</label>
-                        <input type="text" class="form-control" id="Funcion" placeholder="Introduzca su funcion">
-                        <label for="PeriodoInicial">Periodo incial</label>
-                        <input type="text" class="form-control" id="PeriodoInicial" placeholder="Introduzca el periodo incial">
+                        <label for="Funcion">Función</label>
+                        <input type="text" class="form-control" id="Funcion" placeholder="Ejemplo: t*t">
+                        <label for="PeriodoInicial">Periodo inicial</label>
+                        <input type="number" step="any" class="form-control" id="PeriodoInicial" placeholder="Ejemplo: 0">
                         <label for="PeriodoFinal">Periodo final</label>
-                        <input type="text" class="form-control" id="PeriodoFinal" placeholder="Introduzca el periodo final">
-                        <label for="Armonicos">Armonicos</label>
-                        <input type="number" class="form-control" id="Armonicos" placeholder="Introduzca los armonicos">
-                        <button type = "button" class = "btn btn-success" onclick = "calcular();" id = "Calcular">Calcular</button>                      
+                        <input type="number" step="any" class="form-control" id="PeriodoFinal" placeholder="Ejemplo: 2">
+                        <label for="Armonicos">Número de armónicos</label>
+                        <input type="number" min="1" class="form-control" id="Armonicos" placeholder="Ejemplo: 5">
+                        <button type="button" class="btn btn-success mt-3" onclick="calcular();" id="Calcular">Calcular</button>
 
-
+                        <div id="resultadoContainer" class="mt-3 d-none">
+                          <div id="resultadoMensaje" class="alert" role="alert"></div>
+                          <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                              <thead>
+                                <tr>
+                                  <th>Coeficiente</th>
+                                  <th>Valor</th>
+                                </tr>
+                              </thead>
+                              <tbody id="resultadoTablaBody"></tbody>
+                            </table>
+                            <div class="mt-4">
+                              <canvas id="graficaFourier" width="400" height="200"></canvas>
+                            </div>
+                          </div>
+                        </div>
                       </form>
 										</div>
 									</div>
 								</div>
 							</div>
 
-                <h3 class="fw-bold mb-3">Calculadora de números complejos</h3>
-                <h6 class="op-7 mb-2">Poder operar con números complejos</h6>
               </div>
             </div>
           </div>
@@ -185,6 +199,7 @@
     <script src="assets/js/core/jquery-3.7.1.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src = "/js/Fourier.js"></script>
 
     <!-- jQuery Scrollbar -->

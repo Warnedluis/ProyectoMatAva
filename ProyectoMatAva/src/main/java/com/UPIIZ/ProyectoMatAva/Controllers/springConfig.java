@@ -28,11 +28,24 @@ public class springConfig {
         http
 
         .csrf(csrf -> csrf
-            .ignoringRequestMatchers("/Complejos/api/Complejos")
+            .ignoringRequestMatchers(
+                "/Complejos/api/Complejos",
+                "/Fourier/api/Fourier",
+                "/SeriesFourier/Aplicacion/v0.1/Fourier/api/Fourier"
+            )
         )
         
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/auth/**", "/js/**", "/error", "/Complejos/api/Complejos").permitAll()
+            .requestMatchers(
+                "/auth/**",
+                "/js/**",
+                "/error",
+                "/Complejos/api/Complejos",
+                "/getCalculadoraFourier",
+                "/Fourier/api/Fourier",
+                "/SeriesFourier/Aplicacion/v0.1/getCalculadoraFourier",
+                "/SeriesFourier/Aplicacion/v0.1/Fourier/api/Fourier"
+            ).permitAll()
             .anyRequest().authenticated()
         )
         .formLogin(login -> login
